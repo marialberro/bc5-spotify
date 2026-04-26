@@ -153,9 +153,10 @@ def build_prompt(df):
 # FUNCIÓN DE LLAMADA A LA API
 # ============================================================
 def get_response(user_msg, system_prompt):
-    client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
+    import openai
+    openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-    response = client.chat.completions.create(
+    response = openai.chat.completions.create(
         model=MODEL,
         messages=[
             {"role": "system", "content": system_prompt},
