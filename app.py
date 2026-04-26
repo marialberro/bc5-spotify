@@ -12,7 +12,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
-from openai import OpenAI
+import openai
 import json
 
 # ============================================================
@@ -153,7 +153,6 @@ def build_prompt(df):
 # FUNCIÓN DE LLAMADA A LA API
 # ============================================================
 def get_response(user_msg, system_prompt):
-    import openai
     openai.api_key = st.secrets["OPENAI_API_KEY"]
 
     response = openai.chat.completions.create(
@@ -177,7 +176,6 @@ def parse_response(raw):
         if cleaned.endswith("```"):
             cleaned = cleaned[:-3]
         cleaned = cleaned.strip()
-
     return json.loads(cleaned)
 
 
@@ -240,7 +238,7 @@ if prompt := st.chat_input("Ej: ¿Cuál es mi artista más escuchado?"):
 
             except json.JSONDecodeError:
                 st.error("No he podido interpretar la respuesta. Intenta reformular la pregunta.")
-                   except Exception as e:
+            except Exception as e:
                 st.error(f"Error: {str(e)}")
 
 
