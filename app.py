@@ -1,9 +1,9 @@
 # ============================================================
 # CABECERA
 # ============================================================
-# Alumno: Nombre Apellido
-# URL Streamlit Cloud: https://...streamlit.app
-# URL GitHub: https://github.com/marialberro/bc5-spotify
+# Alumno: Maria Alberro 
+# URL Streamlit Cloud: https://bc5-spotify-egpuf8fe7bpvbuwlvwqch7.streamlit.app
+# URL GitHub:  https://github.com/marialberro/bc5-spotify
 
 # ============================================================
 # IMPORTS
